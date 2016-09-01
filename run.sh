@@ -193,45 +193,45 @@ mkdir -p /usr/local/nginx/system/temp/client_body
 ln -s /usr/local/nginx/nginx /usr/bin/nginx
 
 #php redis
-cd ${basedir}
-unzip phpredis-php7.zip
-cd phpredis-master
-/usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config
-make && make install
-echo -e 'extension=redis.so\n' >> /usr/local/php/etc/php.ini
+#cd ${basedir}
+#unzip phpredis-php7.zip
+#cd phpredis-php7
+#/usr/local/php/bin/phpize
+#./configure --with-php-config=/usr/local/php/bin/php-config
+#make && make install
+#echo -e 'extension=redis.so\n' >> /usr/local/php/etc/php.ini
 
 #php memcached
-cd ${basedir}
-tar -zxvf libmemcached-1.0.18.tar.gz
-cd libmemcached-1.0.18
-./configure --prefix=/usr/local/libmemcached
-make && make install
-cd ${basedir}
-unzip php-memcached-php7.zip
-cd php-memcached-php7
-/usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config --with-libmemcached-dir=/usr/local/libmemcached
-make && make install
-echo -e 'extension=memcached.so\n' >> /usr/local/php/etc/php.ini
+#cd ${basedir}
+#tar -zxvf libmemcached-1.0.18.tar.gz
+#cd libmemcached-1.0.18
+#./configure --prefix=/usr/local/libmemcached
+#make && make install
+#cd ${basedir}
+#unzip php-memcached-php7.zip
+#cd php-memcached-php7
+#/usr/local/php/bin/phpize
+#./configure --with-php-config=/usr/local/php/bin/php-config --with-libmemcached-dir=/usr/local/libmemcached
+#make && make install
+#echo -e 'extension=memcached.so\n' >> /usr/local/php/etc/php.ini
 
 #php mongodb
-cd ${basedir}
-unzip mongo-php-driver-master.zip	
-cd mongo-php-driver-master
-/usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config
-make && make install
-echo -e 'extension=mongo.so\n' >> /usr/local/php/etc/php.ini
+#cd ${basedir}
+#unzip mongo-php-driver-master.zip	
+#cd mongo-php-driver-master
+#/usr/local/php/bin/phpize
+#./configure --with-php-config=/usr/local/php/bin/php-config
+#make && make install
+#echo -e 'extension=mongo.so\n' >> /usr/local/php/etc/php.ini
 
 #php ssdb
-cd ${basedir}
-unzip phpssdb-php7.zip
-cd phpssdb-php7
-/usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config
-make && make install
-echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
+#cd ${basedir}
+#unzip phpssdb-php7.zip
+#cd phpssdb-php7
+#/usr/local/php/bin/phpize
+#./configure --with-php-config=/usr/local/php/bin/php-config
+#make && make install
+#echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
 
 #yum -y remove gcc libtool autoconf automake make cmake
 
