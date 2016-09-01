@@ -233,7 +233,7 @@ cd phpssdb-php7
 make && make install
 echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
 
-yum -y remove gcc libtool autoconf automake make cmake
+#yum -y remove gcc libtool autoconf automake make cmake
 
 
 
