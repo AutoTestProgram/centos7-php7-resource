@@ -128,7 +128,7 @@ ldconfig
 php7=${basedir}/php-7.0.10
 phpDir=/usr/local/php
 cfile=/usr/local/php/etc
-
+phpini=/usr/local/php/etc/php.ini 
 cd ${basedir}
 tar -zxvf php-7.0.10.tar.gz &&\
 cd php-7.0.10 &&\
@@ -149,13 +149,15 @@ ln -s ${phpDir}/bin/php /usr/bin/
 ln -s ${phpDir}/bin/php-config /usr/bin/
 ln -s ${phpDir}/bin/phpize /usr/bin/
 ln -s ${phpDir}/sbin/php-fpm /usr/sbin/
-
 ln -s ${phpDir}/etc/php.ini /etc/
 cp ${cfile}/php-fpm.conf.default ${cfile}/php-fpm.conf
 cp -r ${php7}/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
 echo -e '\nexport PATH=${phpDir}/bin:${phpDir}/sbin:$PATH\n' >> /etc/profile && source /etc/profile
 cp ${cfile}/php-fpm.d/www.conf.default ${cfile}/php-fpm.d/www.conf
+sed -i 's/\; short_open_tag/short_open_tag/g' $phpini
+sed -i '850 i zend_extension=opcache.so\nopcache.memory_consumption=128\nopcache.interned_strings_buffer=8\nopcache.max_accelerated_files=4000\nopcache.revalidate_fre
+q=60\nopcache.fast_shutdown=1\nopcache.enable_cli=1' $phpini
 
 #Nginx install
 Nginx=${basedir}/nginx-1.11.3
