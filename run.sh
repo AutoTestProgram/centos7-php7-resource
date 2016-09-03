@@ -196,7 +196,7 @@ make install
 mkdir -p /usr/local/nginx/system/temp/client_body
 ln -s /usr/local/nginx/nginx /usr/bin/nginx
 
-php redis
+#php redis
 cd ${basedir}
 unzip phpredis-php7.zip
 cd phpredis-php7
@@ -236,6 +236,23 @@ cd phpssdb-php7
 ./configure --with-php-config=/usr/local/php/bin/php-config
 make && make install
 echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
+
+#swoole
+cd ${basedir}
+git clone https://github.com/swoole/swoole-src.git
+d swoole-src-1.8.10-stable
+/usr/bin/phpize
+./configure --with-php-config=/usr/bin/php-config 
+make && make install
+
+#runkit 7
+cd ${basedir}
+git clone https://github.com/runkit7/runkit7.git
+zip -q runkit7-master.zip
+cd runkit7-master
+/usr/bin/phpize
+./configure --with-php-config=/usr/bin/php-config
+make && make install
 
 yum -y remove gcc libtool autoconf automake make cmake
 
