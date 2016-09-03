@@ -222,7 +222,7 @@ echo -e 'extension=memcached.so\n' >> /usr/local/php/etc/php.ini
 #php mongodb
 cd ${basedir}
 git clone https://github.com/mongodb/mongo-php-driver
-cd mongo-php-driver-master
+cd mongo-php-driver
 git submodule update --init
 ./configure --with-php-config=/usr/local/php/bin/php-config
 make && make install
@@ -238,23 +238,24 @@ make && make install
 echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
 
 #swoole
-#cd ${basedir}
-#git clone https://github.com/swoole/swoole-src.git
-#cd swoole-src-1.8.10-stable
-#/usr/bin/phpize
-#./configure --with-php-config=/usr/bin/php-config 
-#make && make install
+cd ${basedir}
+git clone https://github.com/swoole/swoole-src.git
+cd swoole-src
+/usr/bin/phpize
+./configure --with-php-config=/usr/bin/php-config 
+make && make install
+echo -e 'extension=swoole.so\n' >> /usr/local/php/etc/php.ini
 
 #runkit 7
-#cd ${basedir}
-#git clone https://github.com/runkit7/runkit7.git
-#zip -q runkit7-master.zip
-#cd runkit7-master
-#/usr/bin/phpize
-#./configure --with-php-config=/usr/bin/php-config
-#make && make install
+cd ${basedir}
+git clone https://github.com/runkit7/runkit7.git
+cd runkit7
+/usr/bin/phpize
+./configure --with-php-config=/usr/bin/php-config
+make && make install
+echo -e 'extension=runkit.so\n' >> /usr/local/php/etc/php.ini
 
-#yum -y remove gcc libtool autoconf automake make cmake
+yum -y remove gcc libtool autoconf automake make cmake
 
 
 
