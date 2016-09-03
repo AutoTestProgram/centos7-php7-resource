@@ -240,7 +240,7 @@ echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
 #swoole
 cd ${basedir}
 git clone https://github.com/swoole/swoole-src.git
-d swoole-src-1.8.10-stable
+cd swoole-src-1.8.10-stable
 /usr/bin/phpize
 ./configure --with-php-config=/usr/bin/php-config 
 make && make install
