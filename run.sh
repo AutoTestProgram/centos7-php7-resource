@@ -224,6 +224,7 @@ cd ${basedir}
 git clone https://github.com/mongodb/mongo-php-driver
 cd mongo-php-driver
 git submodule update --init
+/usr/local/php/bin/phpize
 ./configure --with-php-config=/usr/local/php/bin/php-config
 make && make install
 echo -e 'extension=mongo.so\n' >> /usr/local/php/etc/php.ini
@@ -255,7 +256,7 @@ cd runkit7
 make && make install
 echo -e 'extension=runkit.so\n' >> /usr/local/php/etc/php.ini
 
-yum -y remove gcc libtool autoconf automake make cmake
+#yum -y remove gcc libtool autoconf automake make cmake
 
 
 
