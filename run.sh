@@ -238,23 +238,23 @@ make && make install
 echo -e 'extension=ssdb.so\n' >> /usr/local/php/etc/php.ini
 
 #swoole
-cd ${basedir}
-git clone https://github.com/swoole/swoole-src.git
-cd swoole-src-1.8.10-stable
-/usr/bin/phpize
-./configure --with-php-config=/usr/bin/php-config 
-make && make install
+#cd ${basedir}
+#git clone https://github.com/swoole/swoole-src.git
+#cd swoole-src-1.8.10-stable
+#/usr/bin/phpize
+#./configure --with-php-config=/usr/bin/php-config 
+#make && make install
 
 #runkit 7
-cd ${basedir}
-git clone https://github.com/runkit7/runkit7.git
-zip -q runkit7-master.zip
-cd runkit7-master
-/usr/bin/phpize
-./configure --with-php-config=/usr/bin/php-config
-make && make install
+#cd ${basedir}
+#git clone https://github.com/runkit7/runkit7.git
+#zip -q runkit7-master.zip
+#cd runkit7-master
+#/usr/bin/phpize
+#./configure --with-php-config=/usr/bin/php-config
+#make && make install
 
-yum -y remove gcc libtool autoconf automake make cmake
+#yum -y remove gcc libtool autoconf automake make cmake
 
 
 
